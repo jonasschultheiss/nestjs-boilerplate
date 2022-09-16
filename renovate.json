@@ -66,10 +66,6 @@
       "labels": ["orm"]
     },
     {
-      "matchPackagePatterns": ["discord"],
-      "labels": ["discord"]
-    },
-    {
       "matchDatasources": ["docker"],
       "labels": ["docker-update"]
     },

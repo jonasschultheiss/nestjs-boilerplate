@@ -17,14 +17,15 @@ services:
     env_file:
       - ./.env
     ports:
+      - '7999:3000'
       - '9229:9229'
     links:
-      - nest-database
+      - database
     depends_on:
-      - nest-database
+      - database
 
-  nest-database:
-    container_name: nest-database
+  database:
+    container_name: database
     restart: unless-stopped
     image: postgres:14.5
     env_file:
@@ -32,10 +33,10 @@ services:
     ports:
       - '5432:5432'
     volumes:
-      - nest-database-data:/var/lib/postgres/data
+      - database-data:/var/lib/postgres/data
 
 volumes:
-  nest-database-data:
+  database-data:
 
 networks:
   default:
